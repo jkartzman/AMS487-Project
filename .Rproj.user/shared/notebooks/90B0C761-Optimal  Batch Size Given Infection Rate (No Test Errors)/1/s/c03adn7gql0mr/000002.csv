@@ -1,0 +1,3 @@
+"0","optimal.n <- function(p){"
+"0","  SMfzero(function(n) t.prime(n, p), 1, 50)"
+"0","}"

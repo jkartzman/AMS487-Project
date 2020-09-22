@@ -1,0 +1,26 @@
+infection.rates <- c(1:9 * 1e-3, 1:25 * 1e-2)
+population <- 1e5
+req.tests <- function(n, p){
+  population*(1/n + 1 - (1-p)^n)
+}
+
+optml.n <- function(p){
+  if(p <= .01) {
+    optimize(function(n){req.tests(n, p)}, interval = c(0,50))$minimum
+  } else {
+    optimize(function(n){req.tests(n, p)}, interval = c(0,20))$minimum
+  }
+}
+
+for(p in infection.rates){
+  root <- optml.n(p)
+  root.ceil <- ceiling(root)
+  root.floor <- floor(root) 
+  cat("Optimal batch size given infection rate:", p, "\n")
+  if(req.tests(root.ceil, p) >= req.tests(root.floor, p)){
+    print(root.floor)
+  } else {
+    print(root.ceil)
+  }
+}
+

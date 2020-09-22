@@ -1,0 +1,25 @@
+{
+    "id": "09B71CCD",
+    "path": "~/Research/montecarlo.R",
+    "project_path": "montecarlo.R",
+    "type": "r_source",
+    "hash": "2979088471",
+    "contents": "",
+    "dirty": false,
+    "created": 1600227967334.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "cursorPosition": "32,24",
+        "scrollLine": "29"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1600802376,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1600802376645,
+    "read_only": false,
+    "read_only_alternatives": []
+}

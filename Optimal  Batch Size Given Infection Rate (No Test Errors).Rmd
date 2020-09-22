@@ -1,0 +1,48 @@
+---
+title: "Optimal Batch Size Given Infection Rate (No Testing Error)"
+output: html_notebook
+---
+```{r}
+library(NLRoot)
+```
+
+```{r}
+infection.rates <- c(1:9 * 1e-3, 1:25 * 1e-2)
+population <- 1e5
+```
+
+```{r}
+req.tests <- function(n, p){
+  population*(1/n + 1 - (1-p)^n)
+}
+
+t.prime <- function(n, p){
+  population*(-1/n^2 - (1-p)^n * log(1-p))
+}
+```
+
+```{r}
+optimal.n <- function(p){
+  SMfzero(function(n) t.prime(n, p), 1, 50)
+}
+```
+
+```{r}
+for(p in infection.rates){
+  sec.out <- strsplit(capture.output(optimal.n(p)), " ")
+  is.successful <- "successful\"" == sec.out[[3]][5]
+  if(is.successful){
+    root <- as.numeric(sec.out[[1]][2])
+    root.ceil <- ceiling(root)
+    root.floor <- floor(root) 
+    if(req.tests(root.ceil, p) >= req.tests(root.floor, p)){
+      print(root.floor)
+    } else {
+      print(root.ceil)
+    }
+  } else {
+    print("Select different starting values")
+  }
+}
+```
+

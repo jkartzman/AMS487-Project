@@ -1,0 +1,7 @@
+"0","req.tests <- function(n, p){"
+"0","  population*(1/n + 1 - (1-p)^n)"
+"0","}"
+"0",""
+"0","t.prime <- function(n, p){"
+"0","  population*(-1/n^2 - (1-p)^n * log(1-p))"
+"0","}"
