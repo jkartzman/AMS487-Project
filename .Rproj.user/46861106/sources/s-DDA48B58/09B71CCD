@@ -3,7 +3,7 @@
     "path": "~/Research/montecarlo.R",
     "project_path": "montecarlo.R",
     "type": "r_source",
-    "hash": "2979088471",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1600227967334.0,
@@ -11,15 +11,15 @@
     "relative_order": 2,
     "properties": {
         "tempName": "Untitled1",
-        "cursorPosition": "32,24",
-        "scrollLine": "29"
+        "cursorPosition": "4,12",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1600802376,
+    "lastKnownWriteTime": 1600816632,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1600802376645,
+    "last_content_update": 1600816632537,
     "read_only": false,
     "read_only_alternatives": []
 }

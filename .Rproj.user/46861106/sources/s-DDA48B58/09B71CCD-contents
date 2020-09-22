@@ -2,8 +2,10 @@ library(Rlab)
 
 infection_rates <- c(1:9 * 1e-3, 1:10 * 1e-2)
 pop_size <- 1e5
+alpha <- .01
+beta <- .15
 req_tests <- function(n, p){
-  pop_size*(1/n + 1 - (1-p)^n)
+  pop_size*(1/n + 1 - beta - (1 - alpha - beta)*(1-p)^n)
 }
 
 optml_n <- function(p){
